@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Grading System</title>
+    <title>Grade Calculator</title>
+    <!-- linking the external javascript file -->
+    <script src="indexstudentgrade.js" defer></script>  
 </head>
+
 <body>
-    
+    <!-- A form to be used to input student marks for grading -->
+    <h2>Enter Student Marks For Grading</h2>
+    <form id="marksForm">
+        <label for="marks">Enter marks (0-100): </label>
+        <input type="number" id="marks" name="marks" required>
+        <input type="submit" value="Submit">
+    </form>
+    <!-- The value of the result id here is paased on to the event listener -->
+    <p id="result"></p>
 
-
-
-    <!-- student grading system script -->
-     <script type="text/javascript" src="indexstudentgrade.js"></script>
 </body>
 </html>

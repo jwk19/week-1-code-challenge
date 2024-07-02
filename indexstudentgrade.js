@@ -1,33 +1,33 @@
-// create grading system 
-// Students marks range between 0(lowest) 100(highest)
+// added event listener to handle the submit event on the form on indexstudentgrade.html
 
-// grades classification (A>79, B= 79-60, C= 59-49, D= 49-40, E<40)
+document.getElementById("marksForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
+    let studentMarks = parseInt(document.getElementById("marks").value);
+    let resultElement = document.getElementById("result");
 
-let studentMarks = 78;
+    // Clear any previous result
+    resultElement.textContent = '';
 
-//creating grading function
-function grading() {
-    if (studentMarks >= 0 && studentMarks < 100) {
-        if (studentMarks > 79) {
-            console.log('GRADE A');
-        } else if (studentMarks >= 60) {
-            console.log('GRADE B');
-        } else if (studentMarks >= 49) {
-            console.log('GRADE C');
-        } else if (studentMarks >= 40) {
-            console.log('GRADE D');
+    // Creating grading function
+    function grading() {
+        if (studentMarks >= 0 && studentMarks <= 100) { //checks if the marks inputs are within valid range
+            if (studentMarks > 79) {
+                resultElement.textContent = 'GRADE A'; // marks for Grade A
+            } else if (studentMarks >= 60) {
+                resultElement.textContent = 'GRADE B'; // marks for Grade B
+            } else if (studentMarks >= 49) {
+                resultElement.textContent = 'GRADE C'; // marks for Grade C
+            } else if (studentMarks >= 40) {
+                resultElement.textContent = 'GRADE D'; // marks for Grade D
+            } else {
+                resultElement.textContent = 'GRADE E'; // marks for Grade E
+            }
+        } else {
+            resultElement.textContent = 'Invalid Student Marks'; // message for invalid marks
         }
-        else {
-            console.log('GRADE E');
-        };
-        
-
-    } else {
-        console.log('Invalid Student Marks');
     }
-}
 
-// call the grading function
-grading();
-
+    // Call the grading function
+    grading();
+});
