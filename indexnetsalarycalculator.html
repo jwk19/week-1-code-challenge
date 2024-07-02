@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Salary Calculator</title>
+    <script src="indexnetsalarycalculator.js" defer></script>
+    <!-- styles the form -->
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .salarycalculator {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="salarycalculator">
+        <h1>Net Salary Calculator</h1>
+        <form id="salaryForm">
+            <label for="basicSalary">Basic Salary:</label>
+            <input type="number" id="basicSalary" required>
+            
+            <label for="benefits">Benefits:</label>
+            <input type="number" id="benefits" required>
+            
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+</html>
